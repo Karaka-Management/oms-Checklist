@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-namespace Modules\tests\Checklist\Admin;
+namespace Modules\Checklist\tests\Admin;
 
 /**
  * @internal
