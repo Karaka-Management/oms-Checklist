@@ -27,9 +27,9 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="box wf-100">
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Checklists') ?><i class="fa fa-download floatRight download btn"></i></div>
             <table class="default">
-                <caption><?= $this->getHtml('Checklists') ?><i class="fa fa-download floatRight download btn"></i></caption>
                 <thead>
                 <tr>
                     <td><?= $this->getHtml('ID', '0', '0'); ?>
@@ -37,8 +37,6 @@ echo $this->getData('nav')->render(); ?>
                     <td class="wf-100"><?= $this->getHtml('Name') ?>
                     <td><?= $this->getHtml('Creator') ?>
                     <td><?= $this->getHtml('Created') ?>
-                <tfoot>
-                <tr><td colspan="5">
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
                 $url = \phpOMS\Uri\UriFactory::build('{/prefix}checklist/single?{?}&id=' . $value->getId()); ?>
