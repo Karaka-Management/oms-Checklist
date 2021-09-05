@@ -28,6 +28,7 @@ echo $this->getData('nav')->render(); ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="box wf-100">
+            <div class="slider">
             <table class="default sticky">
                 <caption><?= $this->getHtml('Templates'); ?><i class="fa fa-download floatRight download btn"></i></caption>
                 <thead>
@@ -37,8 +38,6 @@ echo $this->getData('nav')->render(); ?>
                     <td class="wf-100"><?= $this->getHtml('Name'); ?>
                     <td><?= $this->getHtml('Creator'); ?>
                     <td><?= $this->getHtml('Created'); ?>
-                <tfoot>
-                <tr><td colspan="5">
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
                 $url     = \phpOMS\Uri\UriFactory::build('{/prefix}checklist/single?{?}&id=' . $value->getId()); ?>
@@ -53,6 +52,7 @@ echo $this->getData('nav')->render(); ?>
                     <td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
                         <?php endif; ?>
             </table>
+            </div>
         </div>
     </div>
 </div>
