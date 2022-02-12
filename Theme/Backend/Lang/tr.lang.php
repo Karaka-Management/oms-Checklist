@@ -13,18 +13,18 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'Kontrol Listesi',
-    'Checklists'    => 'Denetim Listeleri',
-    'Created'       => 'düzenlendi',
-    'Creator'       => 'yaratıcı',
+    'Checklist'     => 'Kontrol listesi',
+    'Checklists'    => 'Kontrol listeleri',
+    'Created'       => 'Yaratılmış',
+    'Creator'       => 'Yaratıcı',
     'Description'   => 'Açıklama',
     'Files'         => 'Dosyalar',
     'General'       => 'Genel',
-    'Name'          => 'ad',
+    'Name'          => 'İsim',
     'Permissions'   => 'İzinler',
-    'Status'        => 'durum',
+    'Status'        => 'Durum',
     'Tasks'         => 'Görevler',
     'Templates'     => 'Şablonlar',
-    'TimeInMinutes' => 'dakikada Zaman',
+    'TimeInMinutes' => 'Dakikalar içinde zaman',
     'Title'         => 'Başlık',
 ]];

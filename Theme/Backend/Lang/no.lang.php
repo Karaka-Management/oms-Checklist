@@ -13,18 +13,18 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'sjekkliste',
+    'Checklist'     => 'Sjekkliste',
     'Checklists'    => 'Sjekklister',
-    'Created'       => 'laget',
-    'Creator'       => 'skaperen',
+    'Created'       => 'Opprettet',
+    'Creator'       => 'Skaperen.',
     'Description'   => 'Beskrivelse',
-    'Files'         => 'filer',
+    'Files'         => 'Filer',
     'General'       => 'Generell',
     'Name'          => 'Navn',
-    'Permissions'   => 'tillatelser',
+    'Permissions'   => 'Tillatelser',
     'Status'        => 'Status',
-    'Tasks'         => 'oppgaver',
-    'Templates'     => 'maler',
+    'Tasks'         => 'Oppgaver',
+    'Templates'     => 'Maler',
     'TimeInMinutes' => 'Tid i minutter',
     'Title'         => 'Tittel',
 ]];

@@ -14,14 +14,14 @@ declare(strict_types=1);
 
 return ['Checklist' => [
     'Checklist'     => 'Lista de Verificación',
-    'Checklists'    => 'Las listas de verificación',
+    'Checklists'    => 'Listas de verificación',
     'Created'       => 'Creado',
     'Creator'       => 'Creador',
     'Description'   => 'Descripción',
-    'Files'         => 'archivos',
+    'Files'         => 'Archivos',
     'General'       => 'General',
     'Name'          => 'Nombre',
-    'Permissions'   => 'permisos',
+    'Permissions'   => 'Permisos',
     'Status'        => 'Estado',
     'Tasks'         => 'Tareas',
     'Templates'     => 'Plantillas',

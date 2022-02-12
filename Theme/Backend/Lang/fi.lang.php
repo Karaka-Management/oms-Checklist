@@ -14,17 +14,17 @@ declare(strict_types=1);
 
 return ['Checklist' => [
     'Checklist'     => 'Tarkistuslista',
-    'Checklists'    => 'tarkistuslistoja',
+    'Checklists'    => 'Tarkistuslistat',
     'Created'       => 'Luotu',
     'Creator'       => 'Luoja',
     'Description'   => 'Kuvaus',
     'Files'         => 'Tiedostot',
-    'General'       => 'yleinen',
+    'General'       => 'Yleinen',
     'Name'          => 'Nimi',
-    'Permissions'   => 'käyttöoikeudet',
+    'Permissions'   => 'Oikeudet',
     'Status'        => 'Tila',
-    'Tasks'         => 'tehtävät',
-    'Templates'     => 'Mallit',
+    'Tasks'         => 'Tehtävät',
+    'Templates'     => 'Malleja',
     'TimeInMinutes' => 'Aika minuutteina',
-    'Title'         => 'otsikko',
+    'Title'         => 'Otsikko',
 ]];

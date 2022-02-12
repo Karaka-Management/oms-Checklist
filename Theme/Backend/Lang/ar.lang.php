@@ -14,17 +14,17 @@ declare(strict_types=1);
 
 return ['Checklist' => [
     'Checklist'     => 'قائمة تدقيق',
-    'Checklists'    => 'قوائم',
-    'Created'       => 'مخلوق',
+    'Checklists'    => 'قوائم المراجعة',
+    'Created'       => 'خلقت',
     'Creator'       => 'المنشئ',
     'Description'   => 'وصف',
-    'Files'         => 'ملفات',
+    'Files'         => 'الملفات',
     'General'       => 'عام',
     'Name'          => 'اسم',
-    'Permissions'   => 'أذونات',
+    'Permissions'   => 'الأذونات',
     'Status'        => 'حالة',
     'Tasks'         => 'مهام',
     'Templates'     => 'قوالب',
-    'TimeInMinutes' => 'الوقت بالدقائق',
-    'Title'         => 'لقب',
+    'TimeInMinutes' => 'الوقت في دقائق',
+    'Title'         => 'عنوان',
 ]];

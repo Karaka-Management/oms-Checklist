@@ -13,18 +13,18 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'Kontrolní',
-    'Checklists'    => 'seznamy',
-    'Created'       => 'Vytvořeno',
+    'Checklist'     => 'Kontrolní seznam',
+    'Checklists'    => 'CheckLists.',
+    'Created'       => 'Vytvořený',
     'Creator'       => 'Tvůrce',
     'Description'   => 'Popis',
-    'Files'         => 'soubory',
+    'Files'         => 'Soubory',
     'General'       => 'Všeobecné',
     'Name'          => 'název',
-    'Permissions'   => 'oprávnění',
+    'Permissions'   => 'Oprávnění',
     'Status'        => 'Postavení',
-    'Tasks'         => 'úkoly',
-    'Templates'     => 'šablony',
+    'Tasks'         => 'Úkoly',
+    'Templates'     => 'Šablony',
     'TimeInMinutes' => 'Čas v minutách',
     'Title'         => 'Titul',
 ]];

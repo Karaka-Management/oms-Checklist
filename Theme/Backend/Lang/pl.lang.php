@@ -13,18 +13,18 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'checklist',
-    'Checklists'    => 'Listy kontrolne',
+    'Checklist'     => 'Lista kontrolna',
+    'Checklists'    => 'Listy kontrolne.',
     'Created'       => 'Utworzony',
     'Creator'       => 'Twórca',
     'Description'   => 'Opis',
-    'Files'         => 'Akta',
-    'General'       => 'Generał',
+    'Files'         => 'Pliki',
+    'General'       => 'Ogólny',
     'Name'          => 'Nazwa',
     'Permissions'   => 'Uprawnienia',
     'Status'        => 'Status',
-    'Tasks'         => 'zadania',
+    'Tasks'         => 'Zadania',
     'Templates'     => 'Szablony',
-    'TimeInMinutes' => 'Czas w minutach',
+    'TimeInMinutes' => 'Czas w ciągu kilku minut',
     'Title'         => 'Tytuł',
 ]];

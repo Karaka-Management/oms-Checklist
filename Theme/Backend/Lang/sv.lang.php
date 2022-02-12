@@ -14,17 +14,17 @@ declare(strict_types=1);
 
 return ['Checklist' => [
     'Checklist'     => 'Checklista',
-    'Checklists'    => 'checklistor',
+    'Checklists'    => 'Checklistor',
     'Created'       => 'Skapad',
     'Creator'       => 'Skapare',
     'Description'   => 'Beskrivning',
-    'Files'         => 'filer',
+    'Files'         => 'Filer',
     'General'       => 'Allmän',
     'Name'          => 'namn',
-    'Permissions'   => 'Behörigheter',
+    'Permissions'   => 'Behörighet',
     'Status'        => 'Status',
-    'Tasks'         => 'uppgifter',
-    'Templates'     => 'mallar',
-    'TimeInMinutes' => 'Tid i minuter',
+    'Tasks'         => 'Uppdrag',
+    'Templates'     => 'Mall',
+    'TimeInMinutes' => 'Tid på några minuter',
     'Title'         => 'Titel',
 ]];

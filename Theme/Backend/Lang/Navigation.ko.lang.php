@@ -13,8 +13,8 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Checklist'      => 'Checkliste',
-    'Checklists'     => 'Checklisten',
-    'CreateCheclist' => 'Erstellen',
-    'Templates'      => 'Vorlagen',
+    'Checklist'      => '체크리스트',
+    'Checklists'     => '체크리스트',
+    'CreateCheclist' => '만들다',
+    'Templates'      => '템플릿',
 ]];

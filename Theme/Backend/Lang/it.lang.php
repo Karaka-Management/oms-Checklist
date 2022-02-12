@@ -13,15 +13,15 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'lista di controllo',
-    'Checklists'    => 'Liste di controllo',
+    'Checklist'     => 'Checklist.',
+    'Checklists'    => 'Checklists.',
     'Created'       => 'Creato',
     'Creator'       => 'Creatore',
     'Description'   => 'Descrizione',
     'Files'         => 'File',
     'General'       => 'Generale',
     'Name'          => 'Nome',
-    'Permissions'   => 'permessi',
+    'Permissions'   => 'Autorizzazioni',
     'Status'        => 'Stato',
     'Tasks'         => 'Compiti',
     'Templates'     => 'Modelli',
