@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 use Modules\Checklist\Controller\BackendController;
-use Modules\Checklist\Models\PermissionState;
+use Modules\Checklist\Models\PermissionCategory;
 use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
@@ -25,7 +25,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::CHECKLIST,
+                'state'  => PermissionCategory::CHECKLIST,
             ],
         ],
     ],
@@ -36,7 +36,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::TEMPLATE,
+                'state'  => PermissionCategory::TEMPLATE,
             ],
         ],
     ],
@@ -47,7 +47,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
-                'state'  => PermissionState::TEMPLATE,
+                'state'  => PermissionCategory::TEMPLATE,
             ],
         ],
     ],
@@ -58,7 +58,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::TEMPLATE,
+                'state'  => PermissionCategory::TEMPLATE,
             ],
         ],
     ],
