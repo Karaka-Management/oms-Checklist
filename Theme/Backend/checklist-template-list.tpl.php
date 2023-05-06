@@ -40,9 +40,9 @@ echo $this->getData('nav')->render(); ?>
                     <td><?= $this->getHtml('Created'); ?>
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('checklist/single?{?}&id=' . $value->getId()); ?>
+                $url     = \phpOMS\Uri\UriFactory::build('checklist/single?{?}&id=' . $value->id); ?>
                 <tr>
-                    <td><a href="<?= $url; ?>"><?= $value->getId(); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $value->id; ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->parent); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()); ?></a>
