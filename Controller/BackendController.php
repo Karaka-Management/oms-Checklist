@@ -46,7 +46,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
         return $view;
     }
@@ -67,7 +67,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-template-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
         return $view;
     }
@@ -88,7 +88,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-template-create');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
         return $view;
     }
