@@ -23,7 +23,7 @@
                 "target": "self",
                 "icon": null,
                 "order": 1,
-                "from": "Checklists",
+                "from": "Checklist",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1003601001,
                 "children": []
