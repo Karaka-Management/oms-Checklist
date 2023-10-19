@@ -30,7 +30,7 @@ echo $this->data['nav']->render(); ?>
                         <tr><td><label for="iDescription"><?= $this->getHtml('Description'); ?></label><td>
                         <tr><td><textarea id="iDescription" name="description"></textarea><td>
                         <tr><td><label for="iPermission"><?= $this->getHtml('Permissions'); ?></label><td>
-                        <tr><td><span class="input"><button type="button" formaction=""><i class="fa fa-book"></i></button>
+                        <tr><td><span class="input"><button type="button" formaction=""><i class="g-icon">book</i></button>
                                     <input type="text" id="iPermission" name="permission"></span>
                             <td><button><?= $this->getHtml('Add', '0', '0'); ?></button>
                         <tr><td><label for="iFiles"><?= $this->getHtml('Files'); ?></label><td>
@@ -54,7 +54,7 @@ echo $this->data['nav']->render(); ?>
                     <tr><td><label for="iETime"><?= $this->getHtml('TimeInMinutes'); ?></label><td>
                     <tr><td><input type="number" min="0" step="1" id="iETime" name="eTime" value="0"><td>
                     <tr><td><label for="iEPermission"><?= $this->getHtml('Permissions'); ?></label><td>
-                    <tr><td><span class="input"><button type="button" formaction=""><i class="fa fa-book"></i></button>
+                    <tr><td><span class="input"><button type="button" formaction=""><i class="g-icon">book</i></button>
                                 <input type="text" id="iEPermission" name="ePermission"></span>
                         <td><button data-action=""><?= $this->getHtml('Add', '0', '0'); ?></button>
                     <tr><td><label for="iEFiles"><?= $this->getHtml('Files'); ?></label><td>
