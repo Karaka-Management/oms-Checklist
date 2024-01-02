@@ -29,6 +29,17 @@ return [
             ],
         ],
     ],
+    '^.*/checklist/view.*$' => [
+        [
+            'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistView',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionCategory::CHECKLIST,
+            ],
+        ],
+    ],
     '^.*/checklist/template/list.*$' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateList',
@@ -54,6 +65,17 @@ return [
     '^.*/checklist/template/view.*$' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateView',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionCategory::TEMPLATE,
+            ],
+        ],
+    ],
+    '^.*/checklist/template/task.*$' => [
+        [
+            'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateTaskView',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::NAME,

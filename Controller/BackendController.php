@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\Checklist\Controller;
 
+use Modules\Checklist\Models\ChecklistTemplateMapper;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
@@ -31,7 +32,7 @@ use phpOMS\Views\View;
 final class BackendController extends Controller
 {
     /**
-     * Routing end-point for application behaviour.
+     * Routing end-point for application behavior.
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -52,7 +53,7 @@ final class BackendController extends Controller
     }
 
     /**
-     * Routing end-point for application behaviour.
+     * Routing end-point for application behavior.
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -69,11 +70,14 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-template-list');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
+        $view->data['templates'] = ChecklistTemplateMapper::getAll()
+            ->execute();
+
         return $view;
     }
 
     /**
-     * Routing end-point for application behaviour.
+     * Routing end-point for application behavior.
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -94,7 +98,7 @@ final class BackendController extends Controller
     }
 
     /**
-     * Routing end-point for application behaviour.
+     * Routing end-point for application behavior.
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -110,6 +114,16 @@ final class BackendController extends Controller
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-template');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
+
+        $view->data['template'] = ChecklistTemplateMapper::get()
+            ->with('tasks')
+            ->with('tasks/taskElements')
+            ->with('tasks/taskElements/accRelation')
+            ->with('tasks/taskElements/accRelation/relation')
+            ->with('tasks/taskElements/grpRelation')
+            ->with('tasks/taskElements/grpRelation/relation')
+            ->where('id', (int) $request->getData('id'))
+            ->execute();
 
         return $view;
     }
