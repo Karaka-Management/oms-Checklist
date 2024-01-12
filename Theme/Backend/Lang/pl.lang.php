@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'Lista kontrolna',
     'Checklists'    => 'Listy kontrolne.',
     'Created'       => 'Utworzony',
     'Creator'       => 'Twórca',

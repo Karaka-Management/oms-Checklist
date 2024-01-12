@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'チェックリスト',
     'Checklists'    => 'チェックリスト',
     'Created'       => '作成した',
     'Creator'       => 'クリエーター',

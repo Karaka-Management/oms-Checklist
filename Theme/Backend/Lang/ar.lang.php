@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'قائمة تدقيق',
     'Checklists'    => 'قوائم المراجعة',
     'Created'       => 'خلقت',
     'Creator'       => 'المنشئ',

@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['Checklist' => [
-    'Checklist'     => 'Ellenőrző lista',
     'Checklists'    => 'Ellenőrző listák',
     'Created'       => 'Létrehozott',
     'Creator'       => 'Teremtő',
