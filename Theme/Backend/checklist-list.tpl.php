@@ -15,14 +15,6 @@ declare(strict_types=1);
 /**
  * @var \phpOMS\Views\View $this
  */
-
-$footerView = new \phpOMS\Views\PaginationView($this->l11nManager, $this->request, $this->response);
-$footerView->setTemplate('/Web/Templates/Lists/Footer/PaginationBig');
-
-$footerView->setPages(25);
-$footerView->setPage(1);
-$footerView->setResults(1);
-
 echo $this->data['nav']->render(); ?>
 
 <div class="row">
@@ -34,24 +26,20 @@ echo $this->data['nav']->render(); ?>
                 <thead>
                 <tr>
                     <td><?= $this->getHtml('ID', '0', '0'); ?>
-                    <td><?= $this->getHtml('Status'); ?>
                     <td class="wf-100"><?= $this->getHtml('Name'); ?>
-                    <td><?= $this->getHtml('Creator'); ?>
-                    <td><?= $this->getHtml('Created'); ?>
                 <tbody>
-                <?php $c = 0; foreach ([] as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('checklist/single?{?}&id=' . $value->id); ?>
+                <?php $c = 0;
+                foreach ($this->data['checklists'] as $key => $value) : ++$c;
+                    $url = \phpOMS\Uri\UriFactory::build('{/base}/checklist/view?{?}&id=' . $value->id);
+                ?>
+                <tr data-href="<?= $url; ?>">
+                    <td><a href="<?= $url; ?>"><?= $value->id; ?></a>
+                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
+                <?php endforeach; ?>
+                <?php if ($c === 0) : ?>
                 <tr>
-                    <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
-                    <td data-label="<?= $this->getHtml('Status'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
-                    <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->parent); ?></a>
-                    <td data-label="<?= $this->getHtml('Creator'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()); ?></a>
-                    <td data-label="<?= $this->getHtml('Created'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()); ?></a>
-                        <?php endforeach; ?>
-                        <?php if ($c === 0) : ?>
-                <tr>
-                    <td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
-                        <?php endif; ?>
+                    <td colspan="2" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
+                <?php endif; ?>
             </table>
             </div>
         </div>

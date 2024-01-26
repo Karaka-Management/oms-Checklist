@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\Checklist\Controller;
 
+use Modules\Checklist\Models\ChecklistMapper;
 use Modules\Checklist\Models\ChecklistTemplateMapper;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
@@ -48,6 +49,9 @@ final class BackendController extends Controller
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-list');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
+
+        $view->data['checklists'] = ChecklistMapper::getAll()
+            ->execute();
 
         return $view;
     }

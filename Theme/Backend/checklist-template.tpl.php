@@ -38,10 +38,10 @@ echo $this->data['nav']->render(); ?>
                     $url = \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task?{?}&id=' . $task->id);
                 ?>
                 <tr data-href="<?= $url; ?>">
-                    <td><?php if ($task->getPriority() === TaskPriority::NONE) : ?>
+                    <td><?php if ($task->priority === TaskPriority::NONE) : ?>
                             <?= SmartDateTime::formatDuration($task->due?->getTimestamp() - $task->createdAt?->getTimestamp()); ?>
                         <?php else : ?>
-                            <?= $this->getHtml('P' . $task->getPriority(), 'Tasks', 'Backend'); ?>
+                            <?= $this->getHtml('P' . $task->priority, 'Tasks', 'Backend'); ?>
                         <?php endif; ?>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($task->title); ?></a>
                     <td><?php

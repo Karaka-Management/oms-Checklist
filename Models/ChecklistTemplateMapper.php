@@ -39,11 +39,11 @@ final class ChecklistTemplateMapper extends DataMapperFactory
     public const COLUMNS = [
         'checklist_checklist_template_id'          => ['name' => 'checklist_checklist_template_id',          'type' => 'int',    'internal' => 'id'],
         'checklist_checklist_template_name'        => ['name' => 'checklist_checklist_template_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
-        'checklist_checklist_template_description'        => ['name' => 'checklist_checklist_template_description',        'type' => 'string', 'internal' => 'description'],
-        'checklist_checklist_template_repeat'        => ['name' => 'checklist_checklist_template_repeat',        'type' => 'int', 'internal' => 'repeat'],
-        'checklist_checklist_template_interval'        => ['name' => 'checklist_checklist_template_interval',        'type' => 'string', 'internal' => 'interval'],
-        'checklist_checklist_template_start'        => ['name' => 'checklist_checklist_template_start',        'type' => 'DateTime', 'internal' => 'start'],
-        'checklist_checklist_template_end'        => ['name' => 'checklist_checklist_template_end',        'type' => 'DateTime', 'internal' => 'end'],
+        'checklist_checklist_template_description' => ['name' => 'checklist_checklist_template_description',        'type' => 'string', 'internal' => 'description'],
+        'checklist_checklist_template_repeat'      => ['name' => 'checklist_checklist_template_repeat',        'type' => 'int', 'internal' => 'repeat'],
+        'checklist_checklist_template_interval'    => ['name' => 'checklist_checklist_template_interval',        'type' => 'string', 'internal' => 'interval'],
+        'checklist_checklist_template_start'       => ['name' => 'checklist_checklist_template_start',        'type' => 'DateTime', 'internal' => 'start'],
+        'checklist_checklist_template_end'         => ['name' => 'checklist_checklist_template_end',        'type' => 'DateTime', 'internal' => 'end'],
     ];
 
     /**

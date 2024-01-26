@@ -37,10 +37,10 @@ final class ChecklistTemplateTaskMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'checklist_checklist_template_task_id'          => ['name' => 'checklist_checklist_template_task_id',          'type' => 'int',    'internal' => 'id'],
-        'checklist_checklist_template_task_order'        => ['name' => 'checklist_checklist_template_task_order',        'type' => 'int', 'internal' => 'order'],
-        'checklist_checklist_template_task_template'        => ['name' => 'checklist_checklist_template_task_template',        'type' => 'int', 'internal' => 'template'],
-        'checklist_checklist_template_task_task'        => ['name' => 'checklist_checklist_template_task_task',        'type' => 'int', 'internal' => 'task'],
+        'checklist_checklist_template_task_id'       => ['name' => 'checklist_checklist_template_task_id',          'type' => 'int',    'internal' => 'id'],
+        'checklist_checklist_template_task_order'    => ['name' => 'checklist_checklist_template_task_order',        'type' => 'int', 'internal' => 'order'],
+        'checklist_checklist_template_task_template' => ['name' => 'checklist_checklist_template_task_template',        'type' => 'int', 'internal' => 'template'],
+        'checklist_checklist_template_task_task'     => ['name' => 'checklist_checklist_template_task_task',        'type' => 'int', 'internal' => 'task'],
     ];
 
     /**
@@ -51,8 +51,8 @@ final class ChecklistTemplateTaskMapper extends DataMapperFactory
      */
     public const OWNS_ONE = [
         'task' => [
-            'mapper'     => TaskMapper::class,
-            'external'   => 'checklist_checklist_template_task_task',
+            'mapper'   => TaskMapper::class,
+            'external' => 'checklist_checklist_template_task_task',
         ],
     ];
 

@@ -18,7 +18,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/checklist/list.*$' => [
+    '^.*/checklist/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistList',
             'verb'       => RouteVerb::GET,
@@ -29,7 +29,7 @@ return [
             ],
         ],
     ],
-    '^.*/checklist/view.*$' => [
+    '^.*/checklist/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistView',
             'verb'       => RouteVerb::GET,
@@ -40,7 +40,7 @@ return [
             ],
         ],
     ],
-    '^.*/checklist/template/list.*$' => [
+    '^.*/checklist/template/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateList',
             'verb'       => RouteVerb::GET,
@@ -51,7 +51,7 @@ return [
             ],
         ],
     ],
-    '^.*/checklist/template/create.*$' => [
+    '^.*/checklist/template/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateCreate',
             'verb'       => RouteVerb::GET,
@@ -62,7 +62,7 @@ return [
             ],
         ],
     ],
-    '^.*/checklist/template/view.*$' => [
+    '^.*/checklist/template/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateView',
             'verb'       => RouteVerb::GET,
@@ -73,7 +73,7 @@ return [
             ],
         ],
     ],
-    '^.*/checklist/template/task.*$' => [
+    '^.*/checklist/template/task(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateTaskView',
             'verb'       => RouteVerb::GET,

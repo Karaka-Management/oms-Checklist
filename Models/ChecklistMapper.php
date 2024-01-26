@@ -37,10 +37,10 @@ final class ChecklistMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'checklist_checklist_id'          => ['name' => 'checklist_checklist_id',          'type' => 'int',    'internal' => 'id'],
-        'checklist_checklist_name'        => ['name' => 'checklist_checklist_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
-        'checklist_checklist_template'        => ['name' => 'checklist_checklist_template',        'type' => 'int', 'internal' => 'template'],
-        'checklist_checklist_createdat'        => ['name' => 'checklist_checklist_createdat',        'type' => 'DateTimeImmutable', 'internal' => 'createdAt'],
+        'checklist_checklist_id'        => ['name' => 'checklist_checklist_id',          'type' => 'int',    'internal' => 'id'],
+        'checklist_checklist_name'      => ['name' => 'checklist_checklist_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
+        'checklist_checklist_template'  => ['name' => 'checklist_checklist_template',        'type' => 'int', 'internal' => 'template'],
+        'checklist_checklist_createdat' => ['name' => 'checklist_checklist_createdat',        'type' => 'DateTimeImmutable', 'internal' => 'createdAt'],
     ];
 
     /**
@@ -51,10 +51,10 @@ final class ChecklistMapper extends DataMapperFactory
      */
     public const HAS_MANY = [
         'tasks' => [
-            'mapper'       => TaskMapper::class,
-            'table'        => 'checklist_checklist_task',
-            'self'         => 'checklist_checklist_task_task',
-            'external'     => null,
+            'mapper'   => TaskMapper::class,
+            'table'    => 'checklist_checklist_task',
+            'self'     => 'checklist_checklist_task_task',
+            'external' => null,
         ],
     ];
 
