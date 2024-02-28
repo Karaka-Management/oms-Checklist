@@ -37,10 +37,10 @@ final class ChecklistTemplateTaskMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'checklist_checklist_template_task_id'       => ['name' => 'checklist_checklist_template_task_id',          'type' => 'int',    'internal' => 'id'],
-        'checklist_checklist_template_task_order'    => ['name' => 'checklist_checklist_template_task_order',        'type' => 'int', 'internal' => 'order'],
-        'checklist_checklist_template_task_template' => ['name' => 'checklist_checklist_template_task_template',        'type' => 'int', 'internal' => 'template'],
-        'checklist_checklist_template_task_task'     => ['name' => 'checklist_checklist_template_task_task',        'type' => 'int', 'internal' => 'task'],
+        'checklist_template_task_id'       => ['name' => 'checklist_template_task_id',          'type' => 'int',    'internal' => 'id'],
+        'checklist_template_task_order'    => ['name' => 'checklist_template_task_order',        'type' => 'int', 'internal' => 'order'],
+        'checklist_template_task_template' => ['name' => 'checklist_template_task_template',        'type' => 'int', 'internal' => 'template'],
+        'checklist_template_task_task'     => ['name' => 'checklist_template_task_task',        'type' => 'int', 'internal' => 'task'],
     ];
 
     /**
@@ -52,7 +52,7 @@ final class ChecklistTemplateTaskMapper extends DataMapperFactory
     public const OWNS_ONE = [
         'task' => [
             'mapper'   => TaskMapper::class,
-            'external' => 'checklist_checklist_template_task_task',
+            'external' => 'checklist_template_task_task',
         ],
     ];
 
@@ -62,7 +62,7 @@ final class ChecklistTemplateTaskMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const TABLE = 'checklist_checklist_template_task';
+    public const TABLE = 'checklist_template_task';
 
     /**
      * Primary field name.
@@ -70,5 +70,5 @@ final class ChecklistTemplateTaskMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const PRIMARYFIELD = 'checklist_checklist_template_task_id';
+    public const PRIMARYFIELD = 'checklist_template_task_id';
 }

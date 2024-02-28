@@ -44,6 +44,9 @@ class ChecklistTemplate
 
     public ?\DateTime $end = null;
 
+    /**
+     * @var \Modules\Tasks\Models\Task[]
+     */
     public array $tasks = [];
 
     public function __construct()

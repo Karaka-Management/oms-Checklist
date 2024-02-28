@@ -17,6 +17,7 @@ namespace Modules\Checklist\Controller;
 use Modules\Checklist\Models\ChecklistMapper;
 use Modules\Checklist\Models\ChecklistTemplateMapper;
 use phpOMS\Contract\RenderableInterface;
+use phpOMS\DataStorage\Database\Query\OrderType;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Views\View;
@@ -51,6 +52,39 @@ final class BackendController extends Controller
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
         $view->data['checklists'] = ChecklistMapper::getAll()
+            ->sort('id', OrderType::DESC)
+            ->execute();
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewChecklistView(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-view');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
+
+        $view->data['template'] = ChecklistMapper::get()
+            ->with('tasks')
+            ->with('tasks/taskElements')
+            ->with('tasks/taskElements/accRelation')
+            ->with('tasks/taskElements/accRelation/relation')
+            ->with('tasks/taskElements/grpRelation')
+            ->with('tasks/taskElements/grpRelation/relation')
+            ->where('id', (int) $request->getData('id'))
+            ->sort('tasks/due', OrderType::ASC)
             ->execute();
 
         return $view;
@@ -75,6 +109,7 @@ final class BackendController extends Controller
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
         $view->data['templates'] = ChecklistTemplateMapper::getAll()
+            ->sort('id', OrderType::DESC)
             ->execute();
 
         return $view;
@@ -127,8 +162,26 @@ final class BackendController extends Controller
             ->with('tasks/taskElements/grpRelation')
             ->with('tasks/taskElements/grpRelation/relation')
             ->where('id', (int) $request->getData('id'))
+            ->sort('tasks/due', OrderType::ASC)
             ->execute();
 
         return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewChecklistTemplateTaskView(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
+    {
+        return $this->app->moduleManager->get('Tasks', 'Backend')->viewTaskView($request, $response, $data);
     }
 }

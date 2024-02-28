@@ -37,10 +37,10 @@ final class ChecklistMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'checklist_checklist_id'        => ['name' => 'checklist_checklist_id',          'type' => 'int',    'internal' => 'id'],
-        'checklist_checklist_name'      => ['name' => 'checklist_checklist_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
-        'checklist_checklist_template'  => ['name' => 'checklist_checklist_template',        'type' => 'int', 'internal' => 'template'],
-        'checklist_checklist_createdat' => ['name' => 'checklist_checklist_createdat',        'type' => 'DateTimeImmutable', 'internal' => 'createdAt'],
+        'checklist_id'        => ['name' => 'checklist_id',          'type' => 'int',    'internal' => 'id'],
+        'checklist_name'      => ['name' => 'checklist_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
+        'checklist_template'  => ['name' => 'checklist_template',        'type' => 'int', 'internal' => 'template'],
+        'checklist_createdat' => ['name' => 'checklist_createdat',        'type' => 'DateTimeImmutable', 'internal' => 'createdAt'],
     ];
 
     /**
@@ -52,9 +52,9 @@ final class ChecklistMapper extends DataMapperFactory
     public const HAS_MANY = [
         'tasks' => [
             'mapper'   => TaskMapper::class,
-            'table'    => 'checklist_checklist_task',
-            'self'     => 'checklist_checklist_task_task',
-            'external' => null,
+            'table'    => 'checklist_task',
+            'self'     => 'checklist_task_template',
+            'external' => 'checklist_task_task',
         ],
     ];
 
@@ -64,7 +64,7 @@ final class ChecklistMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const TABLE = 'checklist_checklist';
+    public const TABLE = 'checklist';
 
     /**
      * Primary field name.
@@ -72,5 +72,5 @@ final class ChecklistMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const PRIMARYFIELD = 'checklist_checklist_id';
+    public const PRIMARYFIELD = 'checklist_id';
 }

@@ -24,30 +24,29 @@ echo $this->data['nav']->render(); ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="portlet">
-            <div class="portlet-head">
-                <?= $this->getHtml('Tasks'); ?>
-                <span class="end-xs">
-                <form id="iChecklistCreate" action="<?= \phpOMS\Uri\UriFactory::build('{/api}checklist?{?}&csrf={$CSRF}'); ?>" method="POST">
-                    <input id="iId" type="hidden" name="id" value="<?= $this->data['template']->id; ?>">
-                    <input type="submit" class="end-xs save" value="<?= $this->getHtml('Create', '0', '0'); ?>">
-                </form>
-            </span>
-            </div>
+            <div class="portlet-head"><?= $this->getHtml('Tasks'); ?><i class="g-icon download btn end-xs">download</i></div>
             <div class="slider">
             <table class="default sticky">
                 <thead>
                 <tr>
+                    <td><?= $this->getHtml('Status', 'Tasks', 'Backend'); ?><i class="sort-asc g-icon">expand_less</i><i class="sort-desc g-icon">expand_more</i>
                     <td><?= $this->getHtml('Due/Priority', 'Tasks', 'Backend'); ?>
                     <td class="wf-100"><?= $this->getHtml('Title', 'Tasks', 'Backend'); ?>
-                    <td class="wf-100"><?= $this->getHtml('For', 'Tasks', 'Backend'); ?>
+                    <td><?= $this->getHtml('For', 'Tasks', 'Backend'); ?>
                 <tbody>
                 <?php $c = 0;
                 foreach ($this->data['template']->tasks as $key => $task) : ++$c;
                     $url = \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task?{?}&id=' . $task->id);
                 ?>
                 <tr data-href="<?= $url; ?>">
+                    <td data-label="<?= $this->getHtml('Status', 'Tasks', 'Backend'); ?>">
+                    <a href="<?= $url; ?>">
+                        <span class="tag <?= $this->printHtml('task-status-' . $task->status, 'Tasks', 'Backend'); ?>">
+                            <?= $this->getHtml('S' . $task->status, 'Tasks', 'Backend'); ?>
+                        </span>
+                    </a>
                     <td><?php if ($task->priority === TaskPriority::NONE) : ?>
-                            <?= SmartDateTime::formatDuration($task->due?->getTimestamp() - $task->createdAt?->getTimestamp()); ?>
+                            <?= $this->printHtml($task->due->format('Y-m-d H:i')); ?>
                         <?php else : ?>
                             <?= $this->getHtml('P' . $task->priority, 'Tasks', 'Backend'); ?>
                         <?php endif; ?>

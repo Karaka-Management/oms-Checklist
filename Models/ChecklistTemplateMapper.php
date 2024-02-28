@@ -37,13 +37,13 @@ final class ChecklistTemplateMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'checklist_checklist_template_id'          => ['name' => 'checklist_checklist_template_id',          'type' => 'int',    'internal' => 'id'],
-        'checklist_checklist_template_name'        => ['name' => 'checklist_checklist_template_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
-        'checklist_checklist_template_description' => ['name' => 'checklist_checklist_template_description',        'type' => 'string', 'internal' => 'description'],
-        'checklist_checklist_template_repeat'      => ['name' => 'checklist_checklist_template_repeat',        'type' => 'int', 'internal' => 'repeat'],
-        'checklist_checklist_template_interval'    => ['name' => 'checklist_checklist_template_interval',        'type' => 'string', 'internal' => 'interval'],
-        'checklist_checklist_template_start'       => ['name' => 'checklist_checklist_template_start',        'type' => 'DateTime', 'internal' => 'start'],
-        'checklist_checklist_template_end'         => ['name' => 'checklist_checklist_template_end',        'type' => 'DateTime', 'internal' => 'end'],
+        'checklist_template_id'          => ['name' => 'checklist_template_id',          'type' => 'int',    'internal' => 'id'],
+        'checklist_template_name'        => ['name' => 'checklist_template_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
+        'checklist_template_description' => ['name' => 'checklist_template_description',        'type' => 'string', 'internal' => 'description'],
+        'checklist_template_repeat'      => ['name' => 'checklist_template_repeat',        'type' => 'int', 'internal' => 'repeat'],
+        'checklist_template_interval'    => ['name' => 'checklist_template_interval',        'type' => 'string', 'internal' => 'interval'],
+        'checklist_template_start'       => ['name' => 'checklist_template_start',        'type' => 'DateTime', 'internal' => 'start'],
+        'checklist_template_end'         => ['name' => 'checklist_template_end',        'type' => 'DateTime', 'internal' => 'end'],
     ];
 
     /**
@@ -55,9 +55,9 @@ final class ChecklistTemplateMapper extends DataMapperFactory
     public const HAS_MANY = [
         'tasks' => [
             'mapper'   => TaskMapper::class,
-            'table'    => 'checklist_checklist_template_task',
-            'external' => 'checklist_checklist_template_task_task',
-            'self'     => 'checklist_checklist_template_task_template',
+            'table'    => 'checklist_template_task',
+            'external' => 'checklist_template_task_task',
+            'self'     => 'checklist_template_task_template',
         ],
     ];
 
@@ -67,7 +67,7 @@ final class ChecklistTemplateMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const TABLE = 'checklist_checklist_template';
+    public const TABLE = 'checklist_template';
 
     /**
      * Primary field name.
@@ -75,5 +75,5 @@ final class ChecklistTemplateMapper extends DataMapperFactory
      * @var string
      * @since 1.0.0
      */
-    public const PRIMARYFIELD = 'checklist_checklist_template_id';
+    public const PRIMARYFIELD = 'checklist_template_id';
 }

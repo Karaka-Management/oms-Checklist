@@ -1,71 +1,71 @@
 {
-    "checklist_checklist_template": {
-        "name": "checklist_checklist_template",
+    "checklist_template": {
+        "name": "checklist_template",
         "fields": {
-            "checklist_checklist_template_id": {
-                "name": "checklist_checklist_template_id",
+            "checklist_template_id": {
+                "name": "checklist_template_id",
                 "type": "INT",
                 "null": false,
                 "primary": true,
                 "autoincrement": true
             },
-            "checklist_checklist_template_name": {
-                "name": "checklist_checklist_template_name",
+            "checklist_template_name": {
+                "name": "checklist_template_name",
                 "type": "VARCHAR(255)",
                 "null": false
             },
-            "checklist_checklist_template_description": {
-                "name": "checklist_checklist_template_description",
+            "checklist_template_description": {
+                "name": "checklist_template_description",
                 "type": "TEXT",
                 "null": false
             },
-            "checklist_checklist_template_repeat": {
-                "name": "checklist_checklist_template_repeat",
+            "checklist_template_repeat": {
+                "name": "checklist_template_repeat",
                 "type": "TINYINT(1)",
                 "null": false
             },
-            "checklist_checklist_template_interval": {
-                "name": "checklist_checklist_template_interval",
+            "checklist_template_interval": {
+                "name": "checklist_template_interval",
                 "type": "VARCHAR(255)",
                 "null": false
             },
-            "checklist_checklist_template_start": {
-                "name": "checklist_checklist_template_start",
+            "checklist_template_start": {
+                "name": "checklist_template_start",
                 "type": "DATETIME",
                 "null": false
             },
-            "checklist_checklist_template_end": {
-                "name": "checklist_checklist_template_end",
+            "checklist_template_end": {
+                "name": "checklist_template_end",
                 "type": "DATETIME",
                 "null": true,
                 "default": null
             }
         }
     },
-    "checklist_checklist_template_task": {
-        "name": "checklist_checklist_template_task",
+    "checklist_template_task": {
+        "name": "checklist_template_task",
         "fields": {
-            "checklist_checklist_template_task_id": {
-                "name": "checklist_checklist_template_task_id",
+            "checklist_template_task_id": {
+                "name": "checklist_template_task_id",
                 "type": "INT",
                 "null": false,
                 "primary": true,
                 "autoincrement": true
             },
-            "checklist_checklist_template_task_order": {
-                "name": "checklist_checklist_template_task_order",
+            "checklist_template_task_order": {
+                "name": "checklist_template_task_order",
                 "type": "INT",
                 "null": false
             },
-            "checklist_checklist_template_task_template": {
-                "name": "checklist_checklist_template_task_template",
+            "checklist_template_task_template": {
+                "name": "checklist_template_task_template",
                 "type": "INT",
                 "null": false,
-                "foreignTable": "checklist_checklist_template",
-                "foreignKey": "checklist_checklist_template_id"
+                "foreignTable": "checklist_template",
+                "foreignKey": "checklist_template_id"
             },
-            "checklist_checklist_template_task_task": {
-                "name": "checklist_checklist_template_task_task",
+            "checklist_template_task_task": {
+                "name": "checklist_template_task_task",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "task",
@@ -73,59 +73,59 @@
             }
         }
     },
-    "checklist_checklist": {
-        "name": "checklist_checklist",
+    "checklist": {
+        "name": "checklist",
         "fields": {
-            "checklist_checklist_id": {
-                "name": "checklist_checklist_id",
+            "checklist_id": {
+                "name": "checklist_id",
                 "type": "INT",
                 "null": false,
                 "primary": true,
                 "autoincrement": true
             },
-            "checklist_checklist_name": {
-                "name": "checklist_checklist_name",
+            "checklist_name": {
+                "name": "checklist_name",
                 "type": "VARCHAR(255)",
                 "null": false
             },
-            "checklist_checklist_template": {
-                "name": "checklist_checklist_template",
+            "checklist_template": {
+                "name": "checklist_template",
                 "type": "INT",
                 "null": false,
-                "foreignTable": "checklist_checklist_template",
-                "foreignKey": "checklist_checklist_template_id"
+                "foreignTable": "checklist_template",
+                "foreignKey": "checklist_template_id"
             },
-            "checklist_checklist_createdat": {
-                "name": "checklist_checklist_createdat",
+            "checklist_createdat": {
+                "name": "checklist_createdat",
                 "type": "DATETIME",
                 "null": false
             }
         }
     },
-    "checklist_checklist_task": {
-        "name": "checklist_checklist_task",
+    "checklist_task": {
+        "name": "checklist_task",
         "fields": {
-            "checklist_checklist_task_id": {
-                "name": "checklist_checklist_task_id",
+            "checklist_task_id": {
+                "name": "checklist_task_id",
                 "type": "INT",
                 "null": false,
                 "primary": true,
                 "autoincrement": true
             },
-            "checklist_checklist_task_order": {
-                "name": "checklist_checklist_task_order",
+            "checklist_task_order": {
+                "name": "checklist_task_order",
                 "type": "INT",
                 "null": false
             },
-            "checklist_checklist_task_template": {
-                "name": "checklist_checklist_task_template",
+            "checklist_task_template": {
+                "name": "checklist_task_template",
                 "type": "INT",
                 "null": false,
-                "foreignTable": "checklist_checklist",
-                "foreignKey": "checklist_checklist_id"
+                "foreignTable": "checklist",
+                "foreignKey": "checklist_id"
             },
-            "checklist_checklist_task_task": {
-                "name": "checklist_checklist_template_task_task",
+            "checklist_task_task": {
+                "name": "checklist_template_task_task",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "task",

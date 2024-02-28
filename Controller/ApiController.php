@@ -20,6 +20,7 @@ use Modules\Checklist\Models\ChecklistTemplate;
 use Modules\Checklist\Models\ChecklistTemplateMapper;
 use Modules\Checklist\Models\ChecklistTemplateTask;
 use Modules\Checklist\Models\ChecklistTemplateTaskMapper;
+use Modules\Tasks\Models\Task;
 use Modules\Tasks\Models\TaskType;
 use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\RequestAbstract;
@@ -232,6 +233,13 @@ final class ApiController extends Controller
         /** @var ChecklistTemplate $template */
         $template = ChecklistTemplateMapper::get()
             ->with('tasks')
+            ->with('tasks/taskElements')
+            ->with('tasks/taskElements/files')
+            ->with('tasks/taskElements/accRelation')
+            ->with('tasks/taskElements/grpRelation')
+            ->with('tasks/files')
+            ->with('tasks/tags')
+            ->with('tasks/attributes')
             ->where('id', (int) $request->getData('id'))
             ->execute();
 
@@ -239,11 +247,10 @@ final class ApiController extends Controller
         $checklist->template = $template->id;
         $checklist->name     = $template->name;
 
+        // Cloning template tasks
+        // We need to set various IDs and relations to 0 to force the WriteMapper to create the models and set the new IDs
         foreach ($template->tasks as $task) {
-            $task->id   = 0;
-            $task->type = TaskType::SINGLE;
-
-            $checklist->tasks[] = $task;
+            $checklist->tasks[] = Task::fromTemplate($task);
         }
 
         return $checklist;
