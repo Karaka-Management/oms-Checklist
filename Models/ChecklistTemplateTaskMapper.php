@@ -25,7 +25,7 @@ use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
  * @link    https://jingga.app
  * @since   1.0.0
  *
- * @template T of BaseStringL11n
+ * @template T of ChecklistTemplateTask
  * @extends DataMapperFactory<T>
  */
 final class ChecklistTemplateTaskMapper extends DataMapperFactory

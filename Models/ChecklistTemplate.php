@@ -49,6 +49,11 @@ class ChecklistTemplate
      */
     public array $tasks = [];
 
+    /**
+     * Constructor.
+     *
+     * @since 1.0.0
+     */
     public function __construct()
     {
         $this->start = new \DateTime();

@@ -22,7 +22,7 @@ namespace Modules\Checklist\Models;
  * @link    https://jingga.app
  * @since   1.0.0
  */
-final class NullChecklistTask extends ChecklistTask
+final class NullChecklistTemplateTask extends ChecklistTemplateTask
 {
     /**
      * Constructor

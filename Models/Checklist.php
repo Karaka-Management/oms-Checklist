@@ -40,6 +40,11 @@ class Checklist
 
     public array $tasks = [];
 
+    /**
+     * Constructor.
+     *
+     * @since 1.0.0
+     */
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
