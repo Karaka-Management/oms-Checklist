@@ -117,15 +117,15 @@
                 "type": "INT",
                 "null": false
             },
-            "checklist_task_template": {
-                "name": "checklist_task_template",
+            "checklist_task_checklist": {
+                "name": "checklist_task_checklist",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "checklist",
                 "foreignKey": "checklist_id"
             },
             "checklist_task_task": {
-                "name": "checklist_template_task_task",
+                "name": "checklist_task_task",
                 "type": "INT",
                 "null": false,
                 "foreignTable": "task",

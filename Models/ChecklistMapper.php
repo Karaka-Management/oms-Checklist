@@ -53,7 +53,7 @@ final class ChecklistMapper extends DataMapperFactory
         'tasks' => [
             'mapper'   => TaskMapper::class,
             'table'    => 'checklist_task',
-            'self'     => 'checklist_task_template',
+            'self'     => 'checklist_task_checklist',
             'external' => 'checklist_task_task',
         ],
     ];
