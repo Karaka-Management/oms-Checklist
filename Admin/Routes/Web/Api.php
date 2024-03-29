@@ -22,6 +22,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\ApiController:apiChecklistCreateFromTemplate',
             'verb'       => RouteVerb::PUT,
+            'csrf'       => true,
             'permission' => [
                 'module' => ApiController::NAME,
                 'type'   => PermissionType::CREATE,

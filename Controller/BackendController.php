@@ -130,7 +130,7 @@ final class BackendController extends Controller
     public function viewChecklistTemplateCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-template-create');
+        $view->setTemplate('/Modules/Checklist/Theme/Backend/checklist-template');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
 
         return $view;

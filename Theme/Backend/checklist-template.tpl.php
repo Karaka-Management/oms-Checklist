@@ -12,26 +12,88 @@
  */
 declare(strict_types=1);
 
+use Modules\Checklist\Models\NullChecklistTemplate;
 use Modules\Tasks\Models\TaskPriority;
 use phpOMS\Stdlib\Base\SmartDateTime;
+use phpOMS\Uri\UriFactory;
 
 /**
  * @var \phpOMS\Views\View $this
  */
 
+$template = $this->data['template'] ?? new NullChecklistTemplate();
+
+$isNew = $template->id === 0;
+
 echo $this->data['nav']->render(); ?>
 
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="portlet">
+            <form id="fTemplate" method="<?= $isNew ? 'PUT' : 'POST'; ?>" action="<?= UriFactory::build('{/api}checklist/template?{?}&csrf={$CSRF}'); ?>">
+            <div class="portlet-head"><?= $this->getHtml('Template'); ?></div>
+            <div class="portlet-body">
+                <div class="form-group">
+                    <label for="iId"><?= $this->getHtml('ID', '0', '0'); ?></label>
+                    <input type="text" name="id" id="iId" value="<?= $template->id; ?>" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="iName"><?= $this->getHtml('Name'); ?></label>
+                    <input type="text" id="iName" name="name" value="<?= $this->printHtml($template->name); ?>" required>
+                </div>
+
+                <div class="flex-line">
+                    <div>
+                        <div class="form-group">
+                            <label for="iStart"><?= $this->getHtml('Start'); ?></label>
+                            <input type="datetime-local" id="iStart" name="start" value="<?= $this->printHtml($template->start->format('Y-m-d\TH:i:s')); ?>">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-group">
+                            <label for="iEnd"><?= $this->getHtml('End'); ?></label>
+                            <input type="datetime-local" id="iEnd" name="end" value="<?= $this->printHtml($template->end?->format('Y-m-d\TH:i:s')); ?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="iDescription"><?= $this->getHtml('Description'); ?></label>
+                    <textarea id="iDescription" name="desc"><?= $this->printHtml($template->description); ?></textarea>
+                </div>
+
+                <?php if ($isNew) : ?>
+                <div class="form-group">
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="portlet-foot">
+                <?php if ($isNew) : ?>
+                    <input id="iCreateSubmit" type="Submit" value="<?= $this->getHtml('Create', '0', '0'); ?>">
+                <?php else : ?>
+                    <input id="iSaveSubmit" type="Submit" value="<?= $this->getHtml('Save', '0', '0'); ?>">
+                    <form id="iChecklistCreate" action="<?= \phpOMS\Uri\UriFactory::build('{/api}checklist?{?}&csrf={$CSRF}'); ?>" method="POST">
+                        <input id="iId" type="hidden" name="id" value="<?= $this->data['template']->id; ?>">
+                        <input type="submit" class="end-xs save" value="<?= $this->getHtml('Create', '0', '0'); ?>">
+                    </form>
+                <?php endif; ?>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php if (!$isNew) : ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="portlet">
             <div class="portlet-head">
                 <?= $this->getHtml('Tasks'); ?>
                 <span class="end-xs">
-                <form id="iChecklistCreate" action="<?= \phpOMS\Uri\UriFactory::build('{/api}checklist?{?}&csrf={$CSRF}'); ?>" method="POST">
-                    <input id="iId" type="hidden" name="id" value="<?= $this->data['template']->id; ?>">
-                    <input type="submit" class="end-xs save" value="<?= $this->getHtml('Create', '0', '0'); ?>">
-                </form>
-            </span>
+                    <a class="button" href="<?= \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task?{?}&csrf={$CSRF}'); ?>"><?= $this->getHtml('Add', '0', '0'); ?></a>
+                </span>
             </div>
             <div class="slider">
             <table class="default sticky">
@@ -69,3 +131,4 @@ echo $this->data['nav']->render(); ?>
         </div>
     </div>
 </div>
+<?php endif; ?>

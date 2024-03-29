@@ -12,6 +12,8 @@
  */
 declare(strict_types=1);
 
+use phpOMS\Uri\UriFactory;
+
 /**
  * @var \phpOMS\Views\View $this
  */
@@ -20,7 +22,9 @@ echo $this->data['nav']->render(); ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="portlet">
-            <div class="portlet-head"><?= $this->getHtml('Templates'); ?><i class="g-icon download btn end-xs">download</i></div>
+            <div class="portlet-head">
+                <?= $this->getHtml('Templates'); ?>
+                <i class="g-icon download btn end-xs">download</i></div>
             <div class="slider">
             <table class="default sticky">
                 <thead>
