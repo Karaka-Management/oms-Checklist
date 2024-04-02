@@ -53,7 +53,7 @@ final class BackendController extends Controller
 
         $view->data['checklists'] = ChecklistMapper::getAll()
             ->sort('id', OrderType::DESC)
-            ->execute();
+            ->executeGetArray();
 
         return $view;
     }
@@ -110,7 +110,7 @@ final class BackendController extends Controller
 
         $view->data['templates'] = ChecklistTemplateMapper::getAll()
             ->sort('id', OrderType::DESC)
-            ->execute();
+            ->executeGetArray();
 
         return $view;
     }

@@ -26,7 +26,7 @@ return ['Checklist' => [
     'Templates'     => 'Templates',
     'TimeInMinutes' => 'Time in minutes',
     'Title'         => 'Title',
-    'Template'         => 'Template',
+    'Template'      => 'Template',
     'Start'         => 'Start',
-    'End'         => 'End',
+    'End'           => 'End',
 ]];

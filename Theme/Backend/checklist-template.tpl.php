@@ -92,7 +92,7 @@ echo $this->data['nav']->render(); ?>
             <div class="portlet-head">
                 <?= $this->getHtml('Tasks'); ?>
                 <span class="end-xs">
-                    <a class="button" href="<?= \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task?{?}&csrf={$CSRF}'); ?>"><?= $this->getHtml('Add', '0', '0'); ?></a>
+                    <a class="button" href="<?= \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task/create?{?}&csrf={$CSRF}'); ?>"><?= $this->getHtml('Add', '0', '0'); ?></a>
                 </span>
             </div>
             <div class="slider">
@@ -105,7 +105,7 @@ echo $this->data['nav']->render(); ?>
                 <tbody>
                 <?php $c = 0;
                 foreach ($this->data['template']->tasks as $key => $task) : ++$c;
-                    $url = \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task?{?}&id=' . $task->id);
+                    $url = \phpOMS\Uri\UriFactory::build('{/base}/checklist/template/task/view?{?}&id=' . $task->id);
                 ?>
                 <tr data-href="<?= $url; ?>">
                     <td><?php if ($task->priority === TaskPriority::NONE) : ?>

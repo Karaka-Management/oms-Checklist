@@ -73,13 +73,24 @@ return [
             ],
         ],
     ],
-    '^/checklist/template/task(\?.*$|$)' => [
+    '^/checklist/template/task/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateTaskView',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
+                'state'  => PermissionCategory::TEMPLATE,
+            ],
+        ],
+    ],
+    '^/checklist/template/task/create(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateTaskCreate',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::NAME,
+                'type'   => PermissionType::CREATE,
                 'state'  => PermissionCategory::TEMPLATE,
             ],
         ],
