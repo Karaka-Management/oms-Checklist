@@ -22,7 +22,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistList',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -34,7 +34,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistView',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -46,7 +46,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateList',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -58,7 +58,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateCreate',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
@@ -70,7 +70,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateView',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -82,7 +82,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateTaskView',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -94,7 +94,7 @@ return [
         [
             'dest'       => '\Modules\Checklist\Controller\BackendController:viewChecklistTemplateTaskCreate',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
