@@ -22,7 +22,7 @@ echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="portlet">
+        <section class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Tasks'); ?><i class="g-icon download btn end-xs">download</i></div>
             <div class="slider">
             <table class="default sticky">
@@ -60,10 +60,10 @@ echo $this->data['nav']->render(); ?>
                 <?php endforeach; ?>
                 <?php if ($c === 0) : ?>
                 <tr>
-                    <td colspan="2" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
+                    <td colspan="4" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
                 <?php endif; ?>
             </table>
             </div>
-        </div>
+        </section>
     </div>
 </div>

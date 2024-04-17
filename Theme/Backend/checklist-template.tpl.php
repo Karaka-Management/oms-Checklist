@@ -29,7 +29,7 @@ echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12 col-md-6">
-        <div class="portlet">
+        <section class="portlet">
             <form id="fTemplate" method="<?= $isNew ? 'PUT' : 'POST'; ?>" action="<?= UriFactory::build('{/api}checklist/template?{?}&csrf={$CSRF}'); ?>">
             <div class="portlet-head"><?= $this->getHtml('Template'); ?></div>
             <div class="portlet-body">
@@ -61,7 +61,7 @@ echo $this->data['nav']->render(); ?>
 
                 <div class="form-group">
                     <label for="iDescription"><?= $this->getHtml('Description'); ?></label>
-                    <textarea id="iDescription" name="desc"><?= $this->printHtml($template->description); ?></textarea>
+                    <textarea id="iDescription" name="desc"><?= $this->printTextarea($template->description); ?></textarea>
                 </div>
 
                 <?php if ($isNew) : ?>
@@ -81,14 +81,14 @@ echo $this->data['nav']->render(); ?>
                 <?php endif; ?>
             </div>
             </form>
-        </div>
+        </section>
     </div>
 </div>
 
 <?php if (!$isNew) : ?>
 <div class="row">
     <div class="col-xs-12">
-        <div class="portlet">
+        <section class="portlet">
             <div class="portlet-head">
                 <?= $this->getHtml('Tasks'); ?>
                 <span class="end-xs">
@@ -128,7 +128,7 @@ echo $this->data['nav']->render(); ?>
                 <?php endif; ?>
             </table>
             </div>
-        </div>
+        </section>
     </div>
 </div>
 <?php endif; ?>
