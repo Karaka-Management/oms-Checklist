@@ -61,7 +61,7 @@ echo $this->data['nav']->render(); ?>
                     </div>
 
                     <div class="form-group">
-                        <?= $this->data['editor']->getData('text')->render('task-editor', 'plain', 'fTask'); ?>
+                        <?= $this->data['editor']->getData('text')?->render('task-editor', 'plain', 'fTask'); ?>
                     </div>
                 </div>
                 <div class="portlet-foot">
@@ -95,4 +95,4 @@ echo $this->data['nav']->render(); ?>
     </div>
 </div>
 
-<?= $this->getData('accGrpSelector')->getData('popup')->render(); ?>
+<?= $this->getData('accGrpSelector')->getData('popup')?->render(); ?>

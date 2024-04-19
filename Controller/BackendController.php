@@ -184,4 +184,31 @@ final class BackendController extends Controller
     {
         return $this->app->moduleManager->get('Tasks', 'Backend')->viewTaskView($request, $response, $data);
     }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewChecklistTemplateTaskCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Tasks/Theme/Backend/task-create');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003601001, $request, $response);
+
+        $accGrpSelector               = new \Modules\Profile\Theme\Backend\Components\AccountGroupSelector\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['accGrpSelector'] = $accGrpSelector;
+
+        $editor               = new \Modules\Editor\Theme\Backend\Components\Editor\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['editor'] = $editor;
+
+        return $view;
+    }
 }
