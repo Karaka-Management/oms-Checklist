@@ -240,7 +240,7 @@ final class ApiController extends Controller
             ->with('tasks/files')
             ->with('tasks/tags')
             ->with('tasks/attributes')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->execute();
 
         $checklist           = new Checklist();

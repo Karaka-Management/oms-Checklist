@@ -26,12 +26,12 @@ echo $this->data['nav']->render(); ?>
                 <div class="portlet-body">
                     <div class="form-group">
                         <label for="iiReceiver"><?= $this->getHtml('To'); ?></label>
-                        <?= $this->getData('accGrpSelector')->render('iReceiver', 'forward', true); ?>
+                        <?= $this->data['accGrpSelector']->render('iReceiver', 'forward', true); ?>
                     </div>
 
                     <div class="form-group">
                         <label for="iObserver"><?= $this->getHtml('CC'); ?></label>
-                        <?= $this->getData('accGrpSelector')->render('iCC', 'cc', false); ?>
+                        <?= $this->data['accGrpSelector']->render('iCC', 'cc', false); ?>
                     </div>
 
                     <div class="form-group">
@@ -61,7 +61,7 @@ echo $this->data['nav']->render(); ?>
                     </div>
 
                     <div class="form-group">
-                        <?= $this->data['editor']->getData('text')?->render('task-editor', 'plain', 'fTask'); ?>
+                        <?= $this->data['editor']->data['text']?->render('task-editor', 'plain', 'fTask'); ?>
                     </div>
                 </div>
                 <div class="portlet-foot">
@@ -95,4 +95,4 @@ echo $this->data['nav']->render(); ?>
     </div>
 </div>
 
-<?= $this->getData('accGrpSelector')->getData('popup')?->render(); ?>
+<?= $this->data['accGrpSelector']->data['popup']?->render(); ?>

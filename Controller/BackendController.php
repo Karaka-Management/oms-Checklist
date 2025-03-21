@@ -83,7 +83,7 @@ final class BackendController extends Controller
             ->with('tasks/taskElements/accRelation/relation')
             ->with('tasks/taskElements/grpRelation')
             ->with('tasks/taskElements/grpRelation/relation')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->sort('tasks/due', OrderType::ASC)
             ->execute();
 
@@ -161,7 +161,7 @@ final class BackendController extends Controller
             ->with('tasks/taskElements/accRelation/relation')
             ->with('tasks/taskElements/grpRelation')
             ->with('tasks/taskElements/grpRelation/relation')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->sort('tasks/due', OrderType::ASC)
             ->execute();
 
